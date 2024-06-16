@@ -1,0 +1,65 @@
+body {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #e3b3e7, #df669e);
+    margin: 0;
+    height: 100vh;
+}
+
+h1 {
+    color: #701167;
+    font-size: 3em;
+    margin: 10px;
+    text-align: center;
+}
+
+p {
+    color: #701167;
+    font-size: 1.5em;
+    margin: 1em;
+    text-align: center;
+}
+
+.heart {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    background: linear-gradient(to bottom, #ff6b6b, #ff1e1e); /* Mix of pink and red */
+    transform: rotate(-45deg);
+    animation: pulse 1s infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10em; /
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, #ff6b6b, #ff1e1e); /* Match the heart gradient */
+    position: absolute;
+}
+
+.heart::before {
+    top: -100px;
+    left: 0;
+}
+
+.heart::after {
+    left: 100px;
+    top: 0;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1) rotate(-45deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(-45deg);
+    }
+}
